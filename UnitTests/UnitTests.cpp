@@ -32,7 +32,7 @@ namespace UnitTests
 		}
 
 		// Проверяем, правильно ли происходит перевод из строкового представления в числовой
-		TEST_METHOD(TestStrToInt)
+		TEST_METHOD(TestStrToInt1)
 		{
 			string actName("Таран Д.В.");
 			string actDate("13.05.2003");
@@ -44,6 +44,20 @@ namespace UnitTests
 
 			Assert::IsTrue((13 == day),L"String to int day convertion incorrect");
 			Assert::IsTrue((5 == mounth), L"String to int mounth convertion incorrect");
+		}
+
+		TEST_METHOD(TestStrToInt2)
+		{
+			string actName("Юлия В.Д.");
+			string actDate("05.03.2005");
+
+			BirthdayInfo info(actName, actDate);
+
+			int day = info.getDayNum();
+			int mounth = info.getMounthNum();
+
+			Assert::IsTrue((5 == day), L"String to int day convertion incorrect");
+			Assert::IsTrue((3 == mounth), L"String to int mounth convertion incorrect");
 		}
 
 		// Проверка базового функционала
