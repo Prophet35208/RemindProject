@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BirthdayInfo.cpp" />
+    <ClCompile Include="Reminder.cpp" />
     <ClCompile Include="RemindProject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BirthdayInfo.h" />
+    <ClInclude Include="Reminder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

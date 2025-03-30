@@ -8,6 +8,8 @@ private:
 	string name;
 	string date;
 
+
+
 public:
 	BirthdayInfo();
 	BirthdayInfo(string name, string date);
@@ -16,6 +18,8 @@ public:
 	string getDateStr();
 	int getDayNum();
 	int getMounthNum();
+
+
 
 };
 

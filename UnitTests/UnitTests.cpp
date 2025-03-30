@@ -3,6 +3,8 @@
 #include "../RemindProject/RemindProject.cpp"
 #include "../RemindProject/BirthdayInfo.h"
 #include "../RemindProject/BirthdayInfo.cpp"
+#include "../RemindProject/Reminder.h"
+#include "../RemindProject/Reminder.cpp"
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -51,12 +53,12 @@ namespace UnitTests
 			string actName("Юлия В.Д.");
 			string actDate("05.03.2005");
 
-			Reminder rem();
+			Reminder rem;
 			rem.addNewDate("Юлия В.Д.", "05.03.2005");
 
 			string nearDate = rem.getNearestDateMessage();
 
-			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д" == nearDate), L"Message abaut nearest date is incorrect")
+			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д." == nearDate), L"Message about nearest date is incorrect");
 
 		}
 
