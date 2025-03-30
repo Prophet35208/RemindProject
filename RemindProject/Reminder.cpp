@@ -1,5 +1,11 @@
 #include "Reminder.h"
 
+/*
+	* Метод, находящий сколко осталось ждать месяц month, если сейчас месяц nowMonth
+	* @param month первый аргумент, число от 1 до 12
+	* @param nowMonth второй аргумент, число от 1 до 12
+	* @return сколько месяцев осталось ждать
+*/
 int Reminder::getSpanForMonth(int month, int nowMonth)
 {
 	int delta = month - nowMonth;
@@ -13,13 +19,21 @@ Reminder::Reminder()
 
 }
 
+/*
+	* Метод, добавляющий дату в список дат
+	* @param name первый аргумент, строка
+	* @param date второй аргумент, строка
+*/
 void Reminder::addNewDate(string name, string date)
 {
 	BirthdayInfo info(name, date);
 	this->infoVect.push_back(info);
 }
 
-
+/*
+	* Метод, который определяет 
+	* @return строка сообщения о ближайшей дате
+*/
 string Reminder::getNearestDateMessage()
 {
 	// todo реализовать для n числа дат
@@ -72,10 +86,6 @@ string Reminder::getNearestDateMessage()
 
 		}
 	}
-	
-
-		
-
 	switch (monthNum)
 	{
 	case 1:

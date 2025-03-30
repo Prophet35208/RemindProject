@@ -4,12 +4,14 @@ BirthdayInfo::BirthdayInfo()
 {
 }
 
+// Базовый конструктор
 BirthdayInfo::BirthdayInfo(string name, string date)
 {
 	this->name = name;
 	this->date = date;
 }
 
+// Геттеры
 string BirthdayInfo::getNameStr()
 {
 	return this->name;
