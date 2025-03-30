@@ -57,7 +57,7 @@ string Reminder::getNearestDateMessage()
 
 	monthNum = this->infoVect[0].getMounthNum();
 	dayNum = this->infoVect[0].getDayNum();
-	day = dayNum;
+	day = to_string(dayNum);
 	name = this->infoVect[0].getNameStr();
 
 	if (this->infoVect.size() > 1) 
