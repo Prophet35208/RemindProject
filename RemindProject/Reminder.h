@@ -15,5 +15,6 @@ public:
 
 	void addNewDate(string name, string date);
 	string getNearestDateMessage();
+	vector <string> getAllDatesMes();
 };
 

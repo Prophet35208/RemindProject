@@ -133,3 +133,16 @@ string Reminder::getNearestDateMessage()
 
 	return string("Ближайший день рождения будет " + day + " " + month + " у " + name);
 }
+
+	vector<string> Reminder::getAllDatesMes()
+	{
+		vector <string> v;
+		string message;
+
+		for (auto it = this->infoVect.begin(); it != this->infoVect.end(); ++it) {
+			message = "ФИО: " + (*it).getNameStr() + ", дата рождения: " + (*it).getDateStr() + ".";
+			v.push_back(message);
+		}
+
+		return v;
+	}

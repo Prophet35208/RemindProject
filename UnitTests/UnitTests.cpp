@@ -109,7 +109,7 @@ namespace UnitTests
 			secondMessage = vect[1];
 
 			Assert::IsTrue(("ФИО: Юлия В.Д., дата рождения: 05.07.2005." == firstMessage), L"All dates Output is incorrect");
-			Assert::IsTrue(("ФИО: Таран Д.В., дата рождения: 13.05.2003." == firstMessage), L"All dates Output is incorrect");
+			Assert::IsTrue(("ФИО: Таран Д.В., дата рождения: 13.05.2003." == secondMessage), L"All dates Output is incorrect");
 
 		}
 
