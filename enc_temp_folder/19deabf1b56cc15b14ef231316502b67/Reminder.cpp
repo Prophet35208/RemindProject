@@ -134,11 +134,7 @@ string Reminder::getNearestDateMessage()
 	return string("Ближайший день рождения будет " + day + " " + month + " у " + name);
 }
 
-/*
-	* Метод, формирующий вектор сообщений о всех датах
-	* @return вектор строк сообщений
-*/
-vector<string> Reminder::getAllDatesMes()
+	vector<string> Reminder::getAllDatesMes()
 	{
 		vector <string> v;
 		string message;

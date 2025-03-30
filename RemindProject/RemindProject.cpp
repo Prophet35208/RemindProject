@@ -24,6 +24,7 @@ int main()
     string name;
     string date;
     string clear;
+    vector <string> messages;
     while (f) {
         displayOptions();
         cin >> choice;
@@ -45,7 +46,11 @@ int main()
             cout << endl;
             break;
         case 3:
-            //todo
+            messages = rem.getAllDatesMes();
+            for (auto it = messages.begin(); it != messages.end(); ++it) {
+                cout << (*it) << endl;
+            }
+            cout << endl;
             break;
         case 4:
             f = 0;
