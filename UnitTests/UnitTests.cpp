@@ -30,7 +30,6 @@ namespace UnitTests
 		}
 
 		// Проверяем, правильно ли происходит перевод из строкового представления в числовой
-
 		TEST_METHOD(TestStrToInt)
 		{
 			string actName("Таран Д.В.");
@@ -43,6 +42,22 @@ namespace UnitTests
 
 			Assert::IsTrue((13 == day),L"String to int day convertion incorrect");
 			Assert::IsTrue((5 == mounth), L"String to int mounth convertion incorrect");
+		}
+
+		// Проверка базового функционала
+		// Мы даём приложению ФИО и дату рождения, программа возвращает сообщение о том, когда будет ближайший день рождения
+		TEST_METHOD(BasicFunctionality)
+		{
+			string actName("Юлия В.Д.");
+			string actDate("05.03.2005");
+
+			Reminder rem();
+			rem.addNewDate("Юлия В.Д.", "05.03.2005");
+
+			string nearDate = rem.getNearestDateMessage();
+
+			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д" == nearDate), L"Message abaut nearest date is incorrect")
+
 		}
 
 
