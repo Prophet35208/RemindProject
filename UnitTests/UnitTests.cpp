@@ -96,5 +96,22 @@ namespace UnitTests
 
 		}
 
+		TEST_METHOD(GetAllDatesForTwo)
+		{
+			Reminder rem;
+			string firstMessage;
+			string secondMessage;
+			rem.addNewDate("Юлия В.Д.", "05.07.2005");
+			rem.addNewDate("Таран Д.В.", "13.05.2003");
+
+			vector <string> vect = rem.getAllDatesMes();
+			firstMessage = vect[0];
+			secondMessage = vect[1];
+
+			Assert::IsTrue(("ФИО: Юлия В.Д., дата рождения: 05.07.2005." == firstMessage), L"All dates Output is incorrect");
+			Assert::IsTrue(("ФИО: Таран Д.В., дата рождения: 13.05.2003." == firstMessage), L"All dates Output is incorrect");
+
+		}
+
 	};
 }
