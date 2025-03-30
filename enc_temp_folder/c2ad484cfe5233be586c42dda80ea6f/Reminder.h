@@ -8,9 +8,11 @@ class Reminder
 {
 private:
 	vector<BirthdayInfo> infoVect;
+	
 	int getSpanForMonth(int month, int nowMonth);
 public:
 	Reminder();
+
 	void addNewDate(string name, string date);
 	string getNearestDateMessage();
 	vector <string> getAllDatesMes();

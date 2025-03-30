@@ -5,6 +5,8 @@
 #include "../RemindProject/BirthdayInfo.cpp"
 #include "../RemindProject/Reminder.h"
 #include "../RemindProject/Reminder.cpp"
+
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTests
@@ -64,6 +66,7 @@ namespace UnitTests
 		{
 			Reminder rem;
 			rem.addNewDate("Юлия В.Д.", "05.03.2005");
+
 			string nearDate = rem.getNearestDateMessage();
 
 			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д." == nearDate), L"Message about nearest date is incorrect");
@@ -74,13 +77,14 @@ namespace UnitTests
 		{
 			Reminder rem;
 			rem.addNewDate("Таран Д.В.", "13.05.2003");
+
 			string nearDate = rem.getNearestDateMessage();
 
 			Assert::IsTrue(("Ближайший день рождения будет 13 мая у Таран Д.В." == nearDate), L"Message about nearest date is incorrect");
 
 		}
 
-		// Тестируем поведение программы при 2 датах одновременно
+		
 		TEST_METHOD(TwoDates)
 		{
 			Reminder rem;
@@ -92,7 +96,6 @@ namespace UnitTests
 
 		}
 
-		// Тестируем получения массива сообщений при 2 датах
 		TEST_METHOD(GetAllDatesForTwo)
 		{
 			Reminder rem;

@@ -1,5 +1,4 @@
 #include "Reminder.h"
-
 /*
 	* ћетод, наход€щий сколко осталось ждать мес€ц month, если сейчас мес€ц nowMonth
 	* @param month первый аргумент, число от 1 до 12
@@ -15,9 +14,7 @@ int Reminder::getSpanForMonth(int month, int nowMonth)
 }
 
 Reminder::Reminder()
-{
-
-}
+{}
 
 /*
 	* ћетод, добавл€ющий дату в список дат
@@ -36,8 +33,6 @@ void Reminder::addNewDate(string name, string date)
 */
 string Reminder::getNearestDateMessage()
 {
-	// todo реализовать дл€ n числа дат
-	
 	// ѕолучаем текущее врем€
 	auto now = std::chrono::system_clock::now();
 	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
@@ -85,9 +80,9 @@ string Reminder::getNearestDateMessage()
 					monthNum = nextMonthNum;
 					name = (*it).getNameStr();
 				}
-
 		}
 	}
+
 	switch (monthNum)
 	{
 	case 1:
@@ -130,7 +125,6 @@ string Reminder::getNearestDateMessage()
 		month = "декабр€";
 		break;
 	}
-
 	return string("Ѕлижайший день рождени€ будет " + day + " " + month + " у " + name);
 }
 
@@ -142,11 +136,9 @@ vector<string> Reminder::getAllDatesMes()
 	{
 		vector <string> v;
 		string message;
-
 		for (auto it = this->infoVect.begin(); it != this->infoVect.end(); ++it) {
 			message = "‘»ќ: " + (*it).getNameStr() + ", дата рождени€: " + (*it).getDateStr() + ".";
 			v.push_back(message);
 		}
-
 		return v;
 	}

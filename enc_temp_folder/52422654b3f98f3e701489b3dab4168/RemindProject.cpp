@@ -15,6 +15,7 @@ void displayOptions() {
 int main()
 {
     setlocale(LC_ALL, "Rus");
+
     Reminder rem;
 
     cout << "\t\tНапоминалка о днях рождения\n";
@@ -58,5 +59,6 @@ int main()
             break;
         }
     }
+
 }
 
