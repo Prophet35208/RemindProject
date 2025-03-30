@@ -14,6 +14,8 @@ public:
 
 	string getNameStr();
 	string getDateStr();
+	int getDayNum();
+	int getMounthNum();
 
 };
 
