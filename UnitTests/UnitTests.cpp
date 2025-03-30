@@ -88,7 +88,7 @@ namespace UnitTests
 		TEST_METHOD(TwoDates)
 		{
 			Reminder rem;
-			rem.addNewDate("Юлия В.Д.", "05.03.2005");
+			rem.addNewDate("Юлия В.Д.", "05.07.2005");
 			rem.addNewDate("Таран Д.В.", "13.05.2003");
 
 			string nearDate = rem.getNearestDateMessage();

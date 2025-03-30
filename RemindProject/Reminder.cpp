@@ -1,5 +1,13 @@
 #include "Reminder.h"
 
+int Reminder::getSpanForMonth(int month, int nowMonth)
+{
+	int delta = month - nowMonth;
+	if (delta < 0)
+		delta += 12;
+	return delta;
+}
+
 Reminder::Reminder()
 {
 
@@ -22,100 +30,94 @@ string Reminder::getNearestDateMessage()
 	std::tm now_tm;
 	localtime_s(&now_tm, &now_c);
 	int currentDayNum = now_tm.tm_mday;
-	int currentMounthNum = now_tm.tm_mon + 1;
+	int currentMonthNum = now_tm.tm_mon + 1;
 
 	string day;
-	string mounth;
+	string month;
 	string name;
-	int mounthNum;
-	int mounthNum0;
-	int dayNum0;
-	int mounthNum1;
-	int dayNum1;
 
-	dayNum0 = this->infoVect[0].getDayNum();
-	mounthNum0 = this->infoVect[0].getMounthNum();
-	dayNum1 = this->infoVect[0].getDayNum();
-	mounthNum1 = this->infoVect[0].getMounthNum();
+	int monthNum;
+	int dayNum;
+	int nextMonthNum;
+	int nextDayNum;
 
-	if (abs(currentMounthNum - mounthNum0) >= abs(currentMounthNum - mounthNum1))
-		if (abs(currentMounthNum - mounthNum0) == abs(currentMounthNum - mounthNum1))
-			if (abs(currentDayNum - dayNum0) >= abs(currentDayNum - dayNum1))
-				if (abs(currentDayNum - dayNum0) == abs(currentDayNum - dayNum1))
-				{
-					day = to_string(this->infoVect[0].getDayNum());
-					mounthNum = mounthNum0;
-					name = this->infoVect[0].getNameStr();
-				}
+	monthNum = this->infoVect[0].getMounthNum();
+	dayNum = this->infoVect[0].getDayNum();
+
+	if (this->infoVect.size() > 1) 
+	{
+		for (auto it = this->infoVect.begin() + 1; it != this->infoVect.end(); ++it) {
+
+			nextMonthNum = (*it).getMounthNum();
+			nextDayNum = (*it).getDayNum();
+
+			if (getSpanForMonth(monthNum, currentMonthNum) >= getSpanForMonth(nextMonthNum, currentMonthNum))
+				if (getSpanForMonth(monthNum, currentMonthNum) == getSpanForMonth(nextMonthNum, currentMonthNum))
+					if (dayNum >=  nextDayNum)
+						if (dayNum ==  nextDayNum)
+							;
+						else
+						{
+							day = to_string(this->infoVect[1].getDayNum());
+							monthNum = nextMonthNum;
+							name = (*it).getNameStr();
+						}
+					else;
 				else
 				{
 					day = to_string(this->infoVect[1].getDayNum());
-					mounthNum = mounthNum0;
-					name = this->infoVect[1].getNameStr();
+					monthNum = nextMonthNum;
+					name = (*it).getNameStr();
 				}
-			else
-			{
-				day = to_string(this->infoVect[0].getDayNum());
-				mounthNum = mounthNum0;
-				name = this->infoVect[0].getNameStr();
-			}
-		else
-		{
-			day = to_string(this->infoVect[1].getDayNum());
-			mounthNum = mounthNum1;
-			name = this->infoVect[1].getNameStr();
+
 		}
-	else
-	{
-		day = to_string(this->infoVect[0].getDayNum());
-		mounthNum = mounthNum0;
-		name = this->infoVect[0].getNameStr();
 	}
+	
+
 		
 
-
-	switch (mounthNum)
+	switch (monthNum)
 	{
 	case 1:
-		mounth = "€нвар€";
+		month = "€нвар€";
 		break;
 
 	case 2:
-		mounth = "феврал€";
+		month = "феврал€";
 		break;
 
 	case 3:
-		mounth = "марта";
+		month = "марта";
 		break;
 
 	case 4:
-		mounth = "апрел€";
+		month = "апрел€";
 		break;
 	case 5:
-		mounth = "ма€";
+		month = "ма€";
 		break;
 	case 6:
-		mounth = "июн€";
+		month = "июн€";
 		break;
 	case 7:
-		mounth = "июл€";
+		month = "июл€";
 		break;
 	case 8:
-		mounth = "августа";
+		month = "августа";
 		break;
 	case 9:
-		mounth = "сент€бр€";
+		month = "сент€бр€";
 		break;
 	case 10:
-		mounth = "окт€бр€";
+		month = "окт€бр€";
 		break;
 	case 11:
-		mounth = "но€бр€";
+		month = "но€бр€";
 		break;
 	case 12:
-		mounth = "декабр€";
+		month = "декабр€";
 		break;
 	}
 
-	return string("Ѕлижайший день рождени€ будет " + day + " " + mounth + " у " + name);
+	return string("Ѕлижайший день рождени€ будет " + day + " " + month + " у " + name);
 }

@@ -8,7 +8,7 @@ class Reminder
 {
 private:
 	vector<BirthdayInfo> infoVect;
-	
+	int getSpanForMonth(int month, int nowMonth);
 public:
 	Reminder();
 
