@@ -62,7 +62,7 @@ namespace UnitTests
 
 		// Проверка базового функционала
 		// Мы даём приложению ФИО и дату рождения, программа возвращает сообщение о том, когда будет ближайший день рождения
-		TEST_METHOD(BasicFunctionality)
+		TEST_METHOD(BasicFunctionality1)
 		{
 			string actName("Юлия В.Д.");
 			string actDate("05.03.2005");
@@ -73,6 +73,20 @@ namespace UnitTests
 			string nearDate = rem.getNearestDateMessage();
 
 			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д." == nearDate), L"Message about nearest date is incorrect");
+
+		}
+
+		TEST_METHOD(BasicFunctionality2)
+		{
+			string actName("Таран Д.В.");
+			string actDate("13.05.2003");
+
+			Reminder rem;
+			rem.addNewDate("Юлия В.Д.", "05.03.2005");
+
+			string nearDate = rem.getNearestDateMessage();
+
+			Assert::IsTrue(("Ближайший день рождения будет 13 мая у Юлия В.Д." == nearDate), L"Message about nearest date is incorrect");
 
 		}
 
