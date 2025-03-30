@@ -15,7 +15,7 @@ namespace UnitTests
 	public:
 		
 		// Проверяем то, верно ли записываются и возвращаются данные о ФИО и дате
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestStr)
 		{
 			string actName("Таран Д.В.");
 			string actDate("13.05.2003");
@@ -27,6 +27,22 @@ namespace UnitTests
 
 			Assert::IsTrue(actName == name);
 			Assert::IsTrue(actDate == date);
+		}
+
+		// Проверяем, правильно ли происходит перевод из строкового представления в числовой
+
+		TEST_METHOD(TestStrToInt)
+		{
+			string actName("Таран Д.В.");
+			string actDate("13.05.2003");
+
+			BirthdayInfo info(actName, actDate);
+
+			int day = info.getDayNum();
+			int mounth = info.getMounthNum();
+
+			Assert::IsTrue((13 == day),L"String to int day convertion incorrect");
+			Assert::IsTrue((5 == mounth), L"String to int mounth convertion incorrect");
 		}
 
 
