@@ -92,8 +92,9 @@ namespace UnitTests
 			rem.addNewDate("Таран Д.В.", "13.05.2003");
 
 			string nearDate = rem.getNearestDateMessage();
-			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д." == nearDate), L"Message about nearest date is incorrect");
+			Assert::IsTrue(("Ближайший день рождения будет 13 мая у Таран Д.В." == nearDate), L"Message about nearest date is incorrect");
 
 		}
+
 	};
 }
