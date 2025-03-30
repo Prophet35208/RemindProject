@@ -5,8 +5,6 @@
 #include "../RemindProject/BirthdayInfo.cpp"
 #include "../RemindProject/Reminder.h"
 #include "../RemindProject/Reminder.cpp"
-#include <chrono>
-#include <iomanip>
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
