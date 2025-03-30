@@ -23,12 +23,18 @@ string BirthdayInfo::getDateStr()
 
 int BirthdayInfo::getDayNum()
 {
-	//todo добавить настоящую реализацию
-	return 13;
+	stringstream date(this->date);
+	int day;
+	date >> day;
+	return day;
 }
 
 int BirthdayInfo::getMounthNum()
 {
-	//todo добавить настоящую реализацию
-	return 5;
+	stringstream date(this->date);
+	int day, mounth;
+	char dot;
+	date >> day >> dot >> mounth;
+	return mounth;
+
 }
