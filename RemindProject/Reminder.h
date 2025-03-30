@@ -1,10 +1,14 @@
 #pragma once
 #include "BirthdayInfo.h"
+#include <vector>
+#include <chrono>
+#include <iomanip>
 
 class Reminder
 {
 private:
-	BirthdayInfo info;
+	vector<BirthdayInfo> infoVect;
+	
 public:
 	Reminder();
 
