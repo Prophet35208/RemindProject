@@ -5,6 +5,8 @@
 #include "../RemindProject/BirthdayInfo.cpp"
 #include "../RemindProject/Reminder.h"
 #include "../RemindProject/Reminder.cpp"
+#include <chrono>
+#include <iomanip>
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -84,6 +86,16 @@ namespace UnitTests
 
 		}
 
+		
+		TEST_METHOD(TwoDates)
+		{
+			Reminder rem;
+			rem.addNewDate("Юлия В.Д.", "05.03.2005");
+			rem.addNewDate("Таран Д.В.", "13.05.2003");
 
+			string nearDate = rem.getNearestDateMessage();
+			Assert::IsTrue(("Ближайший день рождения будет 5 марта у Юлия В.Д." == nearDate), L"Message about nearest date is incorrect");
+
+		}
 	};
 }
